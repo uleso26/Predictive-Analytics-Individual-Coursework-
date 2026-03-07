@@ -1,6 +1,6 @@
 # Workflow Log
 ## Horizon-Aware Startup Outcome Prediction
-### Individual Coursework
+### Horizon-Aware Startup Outcome Prediction
 
 ---
 
@@ -114,4 +114,28 @@
 **Risk Type:** leakage
 **Commit:** [PENDING — user will commit]
 **Report Note:** Raw date columns explicitly marked as derive-only in config, reinforcing the principle that no unparsed temporal strings should enter model feature matrices.
+
+---
+
+## Step 1.1: Fill problem framing notebook with substantive analytical content
+
+**Action:** Expanded all sections of `notebooks/01_problem_framing.ipynb` from skeleton placeholders to full analytical content. Sections filled: (1.1) Problem definition with dataset size, target encoding, and differentiating insight about lifetime aggregates; (1.2) Four-point censoring argument for excluding operating firms with survival analysis justification; (1.3) Three-horizon framework with per-horizon purpose and narrative framing; (1.4) Six-metric suite with rationale for each metric and threshold selection protocol (Youden's J); (1.5) Five hard constraints with implementation details; (1.6) Leak registry explanation with decision taxonomy; (1.7) Agent governance plan with delegation/verification boundaries and logging protocol; (1.8) Model stack with per-model justification and horizon coverage; (1.9) Validation strategy with temporal split rationale, tuning protocol, and argument against random splitting; (1.10) Summary section. Also enhanced the code cell to print registry summary statistics and verify horizon list consistency.
+**Agent Role:** Claude Code generated all notebook cell content based on the project specification Phase 1 specification. Agent drafted the censoring argument, metric justifications, horizon narrative framing, and governance plan text.
+**My Verification:** [TO VERIFY] Review censoring argument for statistical accuracy. Confirm metric choices and threshold selection protocol are appropriate. Check that agent governance plan accurately reflects intended delegation boundaries. Verify all section references (§) are consistent.
+**Decision:** Accepted — content faithfully implements the project specification's Phase 1 requirements with appropriate analytical depth.
+**Risk Type:** interpretation
+**Commit:** [PENDING — user will commit]
+**Report Note:** Problem framing establishes the three-horizon framework as the project's central methodological contribution, with operating firms excluded via a formal right-censoring argument and six complementary metrics defined for cross-horizon comparison.
+
+---
+
+## Step 1.2: Fix speculative claim in censoring argument (§1.2, point 3)
+
+**Action:** Rewrote point 3 ("Class contamination") in `01_problem_framing.ipynb` §1.2. The original text claimed "Some operating firms are pre-acquisition targets currently in negotiation. Others are pre-failure firms about to shut down." This is speculative — the data contains no evidence about the latent trajectories of operating firms. Replaced with a verifiable statement: the operating class is heterogeneous because outcomes are unobserved, so any assignment is speculation, not data. Added an HTML comment flagging the original wording for report-writing.
+**Agent Role:** Claude Code drafted the original speculative sentence as part of the censoring argument in Step 1.1.
+**My Verification:** User identified the speculative claim during review and requested correction.
+**Decision:** Rejected — replaced unverifiable claim with data-grounded reasoning.
+**Risk Type:** interpretation
+**Commit:** [PENDING — user will commit]
+**Report Note:** Censoring argument tightened: class contamination point now rests on the observable fact that outcomes are missing, not on speculation about sub-populations within the operating class.
 

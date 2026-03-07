@@ -1,6 +1,6 @@
 # Decision Register
 ## Agent Contribution Log — Appendix Material
-### Individual Coursework
+### Horizon-Aware Startup Outcome Prediction
 
 ---
 
@@ -16,7 +16,7 @@
 | 2 | 0.1 | Agent proposed Random Forest + XGBoost + custom NN as model stack | scope | Accepted-Modified | Compared against CatBoost (native categoricals) and TabM (ICLR 2025 SOTA) | project specification §2 Models | Replaced RF with HGB, XGBoost with CatBoost, custom NN with TabM |
 | 3 | 0.1 | Agent proposed random stratified 70/15/15 train/val/test split | evaluation | Rejected | Temporal validation better reflects real-world deployment | project specification §3 Validation | Replaced with chronological split by first_funding_year |
 | 4 | 0.1 | Agent did not flag right-censoring issue with 'operating' class | interpretation | Rejected | Operating firms haven't reached terminal outcome — including them contaminates target | project specification §0 Thesis | Fundamental to project framing |
-| 5 | 0.1 | Agent generated unified project specification document | scope | Accepted-Modified | Verified structure against brief's 6 steps and 4 rubric criteria; added logging trigger rules | project specification | Plan accepted as execution blueprint with logging enhancements |
+| 5 | 0.1 | Agent generated unified project specification document | scope | Accepted-Modified | Verified structure against project's 6-step workflow and 4 evaluation criteria; added logging trigger rules | project specification | Plan accepted as execution blueprint with logging enhancements |
 
 ### Phase 0: Scaffolding
 
@@ -30,3 +30,10 @@
 | 11 | 0.6 | Agent combined section 3.5 header with 3.5.1 H1 subsection in single notebook cell | scope | Accepted-Modified | User noted H1 subsection was not visually distinct | 03_data_preparation.ipynb cell-14 | Split into separate cells for clearer structure |
 | 12 | 0.7 | Agent created model subsection headers without descriptive context from project specification | scope | Accepted-Modified | User requested master-plan-level detail for DummyClassifier (H1/H2) and LR (H3) | 04_modelling.ipynb | Added strategy parameters, expected values, and purpose statements |
 | 13 | 0.8 | Agent used insufficiently emphatic language for date-column drop requirement in config comments | leakage | Accepted-Modified | User flagged risk of raw date strings entering model inputs | src/config.py FOUNDING_SAFE, FIRST_FUNDING_SAFE | Comments now explicitly state DROP before modelling |
+
+### Phase 1: Problem Framing
+
+| ID | Step | Agent Claim/Contribution | Risk Type | Decision | Verification Method | Evidence | Notes |
+|----|------|--------------------------|-----------|----------|---------------------|----------|-------|
+| 14 | 1.1 | Agent generated full problem framing notebook content: problem definition, censoring argument, horizon framework, metric definitions, hard constraints, leak registry explanation, agent governance plan, model stack justification, validation strategy, and summary | interpretation | Accepted | Review analytical content against project specification §0–§3 specifications; verify censoring argument, metric rationale, and governance boundaries | 01_problem_framing.ipynb (12 cells) | Content implements all Phase 1 requirements with analytical depth suitable for report material |
+| 15 | 1.2 | Agent wrote speculative claim in censoring argument: "Some operating firms are pre-acquisition targets... Others are pre-failure firms..." — not verifiable from the data | interpretation | Rejected | User identified claim as ungrounded speculation during review | 01_problem_framing.ipynb §1.2 point 3 | Rewrote to data-grounded statement; added HTML comment flagging for report tightening |
