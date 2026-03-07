@@ -1,0 +1,13 @@
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.4
+catboost>=1.2
+shap>=0.43
+matplotlib>=3.7
+seaborn>=0.13
+umap-learn>=0.5
+tabm
+optuna>=3.5
+jupyter>=1.0
+nbformat>=5.0
+pytest>=7.0
