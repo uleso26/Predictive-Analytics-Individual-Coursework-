@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /tmp/pytorch_extracted/lib/python3.13/site-packages/torch/bin/torch_shm_manager /opt/anaconda3/lib/python3.13/site-packages/torch/bin/)",
+      "Bash(chmod +x /opt/anaconda3/lib/python3.13/site-packages/torch/bin/torch_shm_manager)",
+      "Bash(__NEW_LINE_0d9475d6f82e999e__ python -c \"import torch; print\\(''torch'', torch.__version__\\); print\\(''CUDA:'', torch.cuda.is_available\\(\\)\\)\")",
+      "Read(//tmp/pytorch_extracted/lib/python3.13/site-packages/torch/bin/**)",
+      "Read(//private/tmp/libtorch_extracted/**)",
+      "Read(//private/tmp/libtorch_extracted/bin/**)",
+      "Bash(pip install tabm)",
+      "Bash(python -c \":*)",
+      "Bash(jupyter nbconvert --to notebook --execute 04_modelling.ipynb --output 04_modelling.ipynb --ExecutePreprocessor.timeout=3600)",
+      "Bash(python gen_04_modelling.py)",
+      "Bash(python3 -c \"import json; nb=json.load\\(open\\(''/Users/uleso/Documents/UCL BA/Predictive-Analytics-Individual-Coursework-/notebooks/05_evaluation.ipynb''\\)\\); print\\(len\\(nb[''cells'']\\)\\); [print\\(f''{i}: {c[\"\"cell_type\"\"]}: {c[\"\"source\"\"][:80]}''\\) for i,c in enumerate\\(nb[''cells'']\\)]\")"
+    ],
+    "additionalDirectories": [
+      "/opt/anaconda3/lib/python3.13/site-packages/torch/bin"
+    ]
+  }
+}
